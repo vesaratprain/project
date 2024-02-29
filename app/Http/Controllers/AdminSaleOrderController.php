@@ -17,6 +17,7 @@ class AdminSaleOrderController extends CBController {
 		$this->addText("Po Ref","po_ref")->strLimit(150)->maxLength(255);
 		$this->addMoney("Price","price");
 		$this->addDatetime("Updated At","updated_at")->required(false)->showAdd(false)->showEdit(false);
+		$this->addSelectTable("Employee","employee",["table"=>"employee","value_option"=>"id","display_option"=>"name","sql_condition"=>""]);
 		
 
     }
