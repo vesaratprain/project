@@ -12,7 +12,7 @@ class AdminInvoiceController extends CBController {
         $this->setPageTitle("Invoice");
 
         $this->addDatetime("Created At","created_at")->required(false)->showAdd(false)->showEdit(false);
-		$this->addWysiwyg("Customer Detail","customer_details")->strLimit(150);
+		$this->addSelectTable("Customer Detail","customer_details",["table"=>"customers","value_option"=>"id","display_option"=>"name","sql_condition"=>""]);
 		$this->addText("Offer","offer")->strLimit(150)->maxLength(255);
 		$this->addText("Order Detail","order_detail")->strLimit(150)->maxLength(255);
 		$this->addNumber("Price","price");
